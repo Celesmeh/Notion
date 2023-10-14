@@ -41,7 +41,7 @@ h1 {
     background: #8a2c6f;
     color: #fff;
     display: inline-block;
-    box-shadow: 2px 2px 1px 0px #295C7B;
+  
 }
 
 .card:hover {
@@ -53,12 +53,12 @@ h1 {
     display: inline-block;
     font-family: 'Courier New', monospace;
     font-size: 1.2em;
-    /* padding-left: 20px; */
+    /* padding-left: 50px; */
 }
 
 .time {
     display: inline-block;
-    min-width: 37px;
+    min-width: 17px;
 }
 
 .colon {
@@ -86,7 +86,7 @@ h1 {
     </style>
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Courier New:400,700" rel="stylesheet">
 
 <div class="full-table">
   <div class="table-cell">
@@ -98,6 +98,7 @@ h1 {
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
         <div class="time" id="min"></div>
+        <div class="time" id="sec"></div>
       </div>
     </div>
     
@@ -112,23 +113,23 @@ document.getElementById('date').innerHTML = today.toDateString();
 
 
 function clock() {
-var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
-var minutes = zeros(today.getMinutes());
-var seconds = zeros(today.getSeconds());
+var today =new Date();
+var hour =zeros(twelveHour(today.getHours()));
+var minutes =zeros(today.getMinutes());
+var seconds = "";
 if(today.getHours() >=12){
-    seconds+=" pm"
+    seconds+="pm"
 }
 else{
     seconds+=" am"
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Good Morning  ';
+        greet = 'Good Morning Sunshine ';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
+        greet = 'Good Afternoon Friend ';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  ';
+        greet = 'Good Evening Darling ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
